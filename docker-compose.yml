@@ -33,16 +33,16 @@ services:
       - "traefik.http.routers.whoami.entrypoints=websecure"
       - "traefik.http.routers.whoami.tls.certresolver=myresolver"
 services:
-  email:
-    image: ...
+  email:mail@example.com
+    image:"traefik:v2.4" 
     environment:
       - SMTP_EMAIL_HOST=your-email-host.com
-      - SMTP_EMAIL_PORT=...
-      - SMTP_EMAIL_USER=...
+      - SMTP_EMAIL_PORT=8000
+      - SMTP_EMAIL_USER=mail@example.com
       - SMTP_EMAIL_PASSWORD=...
 
   web:
-    image: ...
+    image: "traefik:v2.4" 
     environment:
       - WEB_DOMAIN=your-web-domain.com
       - ...
