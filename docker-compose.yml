@@ -33,5 +33,17 @@ services:
       - "traefik.http.routers.whoami.entrypoints=websecure"
       - "traefik.http.routers.whoami.tls.certresolver=myresolver"
 services:
-  myservice:
-    image: new-image:tag
+  email:
+    image: ...
+    environment:
+      - SMTP_EMAIL_HOST=your-email-host.com
+      - SMTP_EMAIL_PORT=...
+      - SMTP_EMAIL_USER=...
+      - SMTP_EMAIL_PASSWORD=...
+
+  web:
+    image: ...
+    environment:
+      - WEB_DOMAIN=your-web-domain.com
+      - ...
+
